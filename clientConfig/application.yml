@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: subject   #service name, this will appear in eureka server homepage
+  config:
+    import: optional:configserver:http://localhost:8888/
+datasource:
+  url: jdbc:oracle:thin:@//localhost:1521/xe
+  username: clientdb
+  password: admin
+  driver-class-name: oracle.jdbc.OracleDriver
+jpa:
+  database-platform: org.hibernate.dialect.Oracle12cDialect
+  hibernate:
+    use-new-id-generator-mappings: false
+    ddl-auto: create
